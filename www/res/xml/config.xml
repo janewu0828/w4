@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <!-- config.xml reference: https://build.phonegap.com/docs/config-xml -->
-<widget xmlns     = "http://www.w3.org/ns/widgets"
+<widget xmlns     = "http://www.w4.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
-        id        = "com.phonegap.w3"
+        id        = "com.phonegap.w4"
         version   = "1.0.0">
 
-    <name>w3</name>
+    <name>w4</name>
 
     <description>
-        w3 sample application that responds to the deviceready event.
+        w4 sample application that responds to the deviceready event.
     </description>
 
     <author href="http://phonegap.com" email="support@phonegap.com">
