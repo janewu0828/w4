@@ -23,9 +23,9 @@
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature id="blackberry.ui.dialog" />
     <feature id="blackberry.media.camera" />
-    <rim:permissions>
+    <!-- <rim:permissions>
     <rim:permit>use_camera</rim:permit>
-    </rim:permissions>
+    </rim:permissions> -->
 
     <!-- Tizen -->
     <feature name="http://tizen.org/api/application" required="true"/>
