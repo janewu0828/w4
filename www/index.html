@@ -95,13 +95,6 @@
     }
 
 
-    Camera.PopoverArrowDirection = {
-        ARROW_UP : 1,        // matches iOS UIPopoverArrowDirection constants
-        ARROW_DOWN : 2,
-        ARROW_LEFT : 4,
-        ARROW_RIGHT : 8,
-        ARROW_ANY : 15
-    };
     // camera.getPicture
     // Called when a photo is successfully retrieved
     //
@@ -150,9 +143,20 @@
     // A button will call this function
     //
     function capturePhoto() {
+      var popover = new CameraPopoverOptions(300, 300, 100, 100, Camera.PopoverArrowDirection.ARROW_ANY);
+     var options = {
+         quality         : 50,
+         destinationType : Camera.DestinationType.DATA_URL,
+         sourceType      : Camera.PictureSource.SAVEDPHOTOALBUM,
+         popoverOptions  : popover
+     };
+
+
       // Take picture using device camera and retrieve image as base64-encoded string
-      navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
+      // navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
+      //   destinationType: destinationType.DATA_URL });
+
+       navigator.camera.getPicture(onSuccess, onFail, options);
     }
 
     // A button will call this function
