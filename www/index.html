@@ -98,6 +98,12 @@
     // Called when a photo is successfully retrieved
     //
     function onPhotoDataSuccess(imageData) {
+      { x : 0,
+  y :  32,
+  width : 320,
+  height : 480,
+  arrowDir : Camera.PopoverArrowDirection.ARROW_ANY
+};
       // Uncomment to view the base64-encoded image data
       // console.log(imageData);
 
@@ -112,7 +118,11 @@
       // Show the captured photo
       // The inline CSS rules are used to resize the image
       //
+      // 
+      // cameraSuccess
+      // imageData: Base64 encoding of the image data, or the image file URI, depending on cameraOptions in effect. (String)
       smallImage.src = "data:image/jpeg;base64," + imageData;
+
     }
 
     // Called when a photo is successfully retrieved
