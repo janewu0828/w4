@@ -16,6 +16,9 @@
         // Empty
     }
 
+
+
+
     // alert dialog dismissed
         function alertDismissed() {
             // do something
@@ -30,6 +33,28 @@
             'Game Over',            // title
             'Done'                  // buttonName
         );
+    }
+
+    // Show a custom alert
+    //
+    function showAlertV() {
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );
+    }
+
+    // Beep three times
+    //
+    function playBeep() {
+        navigator.notification.beep(3);
+    }
+
+    // Vibrate for 2 seconds
+    //
+    function vibrate() {
+        navigator.notification.vibrate(2000);
     }
 
     // process the confirmation dialog result
@@ -48,11 +73,32 @@
         );
     }
 
+    // process the promptation dialog result
+    function onPrompt(results) {
+        alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+    }
+
+    // Show a custom prompt dialog
+    //
+    function showPrompt() {
+        navigator.notification.prompt(
+            'Please enter your name',  // message
+            onPrompt,                  // callback to invoke
+            'Registration',            // title
+            ['Ok','Exit'],             // buttonLabels
+            'Jane Doe'                 // defaultText
+        );
+    }
+
     </script>
   </head>
   <body>
     <p><a href="#" onclick="showAlert(); return false;">Show Alert</a></p>
+    <p><a href="#" onclick="showAlertV(); return false;">Show AlertV</a></p>
+    <p><a href="#" onclick="playBeep(); return false;">Play Beep</a></p>
+    <p><a href="#" onclick="vibrate(); return false;">Vibrate</a></p>
     <p><a href="#" onclick="showConfirm(); return false;">Show Confirm</a></p>
+    <p><a href="#" onclick="showPrompt(); return false;">Show Prompt</a></p>
   </body>
 </html>
 </BODY></HTML>
