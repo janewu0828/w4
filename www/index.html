@@ -5,6 +5,9 @@ xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
 <META content="text/html; charset=UTF-8" http-equiv="Content-Type">
 <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 <script type="text/javascript" charset="utf-8">
+	_alert = window.alert;
+	_confirm = window.confirm;
+
   // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, false);
@@ -33,7 +36,7 @@ xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
 
     // process the confirmation dialog result
     function onConfirm(buttonIndex) {
-        alert('你選擇了' + buttonIndex);
+        _alert('你選擇了' + buttonIndex);
     }
 
     // Show a custom confirmation dialog
@@ -49,7 +52,7 @@ xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
 
     // process the promptation dialog result
     function onPrompt(results) {
-        alert("你選擇了" + results.buttonIndex + "以及輸入了" + results.input1);
+        _alert("你選擇了" + results.buttonIndex + "以及輸入了" + results.input1);
     }
 
     // Show a custom prompt dialog
