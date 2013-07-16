@@ -26,8 +26,24 @@ xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
         navigator.notification.alert(
             '挑轉頁面嗎',  // message
             //alertDismissed,         // callback
-            // 'Game Over',            // title
+            'title',            // title
             '重導向'                  // buttonName
+        );
+    }
+
+    // process the confirmation dialog result
+    function onConfirm(buttonIndex) {
+        alert('你選擇了' + buttonIndex);
+    }
+
+    // Show a custom confirmation dialog
+    //
+    function showConfirm() {
+        navigator.notification.confirm(
+            '前往活動', // message
+             onConfirm,            // callback to invoke with index of button pressed
+            'titl',           // title
+            '前往,離開'         // buttonLabels
         );
     }
 </script>
@@ -204,7 +220,7 @@ google_ad_height = 250;
 <UL class="nav nav-tabs">
   <LI class="active"><A 
   href="http://womany.net/events/lianhonghong" onclick="showAlert(); return false;">精選文章</A></LI>
-  <LI><A href="http://womany.net/events/lianhonghong/rule">活動辦法</A></LI>
+  <LI><A href="http://womany.net/events/lianhonghong/rule" onclick="showConfirm(); return false;">活動辦法</A></LI>
   <LI><A href="http://womany.net/events/lianhonghong/posts">快來投票</A></LI></UL>
 <DIV style="margin-top: 30px;" class="tab-content">
 <DIV style="margin-left: 0px;" class="tab-pane active">
