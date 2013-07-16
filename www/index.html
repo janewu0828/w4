@@ -46,6 +46,23 @@ xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
             '前往,離開'         // buttonLabels
         );
     }
+
+    // process the promptation dialog result
+    function onPrompt(results) {
+        alert("你選擇了" + results.buttonIndex + "以及輸入了" + results.input1);
+    }
+
+    // Show a custom prompt dialog
+    //
+    function showPrompt() {
+        navigator.notification.prompt(
+            '來留下足跡吧',  // message
+            onPrompt,                  // callback to invoke
+            'Registration',            // title
+            ['送出','離開'],             // buttonLabels
+            // 'Jane Doe'                 // defaultText
+        );
+    }
 </script>
 
 <SCRIPT type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</SCRIPT>
@@ -221,7 +238,7 @@ google_ad_height = 250;
   <LI class="active"><A 
   href="http://womany.net/events/lianhonghong" onclick="showAlert(); return false;">精選文章</A></LI>
   <LI><A href="http://womany.net/events/lianhonghong/rule" onclick="showConfirm(); return false;">活動辦法</A></LI>
-  <LI><A href="http://womany.net/events/lianhonghong/posts">快來投票</A></LI></UL>
+  <LI><A href="http://womany.net/events/lianhonghong/posts" onclick="showPrompt(); return false;">快來投票</A></LI></UL>
 <DIV style="margin-top: 30px;" class="tab-content">
 <DIV style="margin-left: 0px;" class="tab-pane active">
 <DIV id="event-editor-says">
