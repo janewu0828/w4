@@ -3,56 +3,8 @@
 lang="zh-tw" xmlns="http://www.w3.org/1999/xhtml" xmlns:og = "http://ogp.me/ns#" 
 xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
 <META content="text/html; charset=UTF-8" http-equiv="Content-Type">
+<SCRIPT type="text/javascript" charset="utf-8" src="cordova-1.9.0.js" async=""></SCRIPT>
 
-
-
-<script type="text/javascript" charset="utf-8" src="cordova.js"></script>
-<script type="text/javascript" charset="utf-8">
-
-    // Wait for device API libraries to load
-    //
-    document.addEventListener("deviceready", onDeviceReady, false);
-
-    // device APIs are available
-    //
-    function onDeviceReady() {
-        // Empty
-    }
-
-    // alert dialog dismissed
-        function alertDismissed() {
-            // do something
-        }
-
-
-    // Show a custom alertDismissed
-    //
-    function showAlert() {
-        navigator.notification.alert(
-            'Go',  // message
-            //alertDismissed,         // callback
-            'title',            // title
-            'Redirection'                  // buttonName
-        );
-    }
-
-
-    // process the promptation dialog result
-    function onPrompt(results) {
-        alert("You selected " + results.buttonIndex + " and entered " + results.input1);
-    }
-    // Show a custom prompt dialog
-    //
-    function showPrompt() {
-        navigator.notification.prompt(
-            'Please enter your name',  // message
-            onPrompt,                  // callback to invoke
-            'Registration',            // title
-            ['Submit','Exit'],             // buttonLabels
-            //'Jane Wu'                 // defaultText
-        );
-    }
-</script>
 <SCRIPT type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()]);</SCRIPT>
 <TITLE>Womany x 臉紅紅 | 迷活動 | 女人迷 womany</TITLE>
 <META name="robots" content="INDEX,FOLLOW">
@@ -223,18 +175,8 @@ google_ad_height = 250;
 </DIV>
 <DIV class="clearboth"></DIV>
 <UL class="nav nav-tabs">
-  
-
-
-
-  <LI class="active">
-  	<!-- <A href="#" onclick="showPrompt(); return false;">輸入暱稱</A></LI> -->
-  <LI><A 
-  href="#" onclick="showAlert(); return false;">精選文章</A></LI>
-
-
-
-
+  <LI class="active"><A 
+  href="http://womany.net/events/lianhonghong">精選文章</A></LI>
   <LI><A href="http://womany.net/events/lianhonghong/rule">活動辦法</A></LI>
   <LI><A href="http://womany.net/events/lianhonghong/posts">快來投票</A></LI></UL>
 <DIV style="margin-top: 30px;" class="tab-content">
