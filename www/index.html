@@ -23,12 +23,30 @@ xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
     //
     function showAlert() {
         navigator.notification.alert(
-            'You are the winner!',  // message
+            'Transfer page to another page',  // message
             //alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
+            'title',            // title
+            'Redirections'                  // buttonName
         );
     }
+
+    // process the promptation dialog result
+    function onPrompt(results) {
+        alert("You selected button number " + results.buttonIndex + " and entered " + results.input1);
+    }
+
+    // Show a custom prompt dialog
+    //
+    function showPrompt() {
+        navigator.notification.prompt(
+            'Please enter your name',  // message
+            onPrompt,                  // callback to invoke
+            'Registration',            // title
+            ['Ok','Exit'],             // buttonLabels
+            'Jane Doe'                 // defaultText
+        );
+    }快來投票
+
 </script>
 
 
@@ -206,7 +224,8 @@ google_ad_height = 250;
   <LI class="active"><A 
   href="http://womany.net/events/lianhonghong" onclick="showAlert(); return false;">精選文章</A></LI>
   <LI><A href="http://womany.net/events/lianhonghong/rule">活動辦法</A></LI>
-  <LI><A href="http://womany.net/events/lianhonghong/posts">快來投票</A></LI></UL>
+  <LI><A href="http://womany.net/events/lianhonghong/posts">快來投票</A></LI>
+  <LI><A href="#" onclick="showPrompt(); return false;">輸入暱稱</A></LI></UL>
 <DIV style="margin-top: 30px;" class="tab-content">
 <DIV style="margin-left: 0px;" class="tab-pane active">
 <DIV id="event-editor-says">
