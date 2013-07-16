@@ -24,14 +24,32 @@ xmlns:fb = "http://www.facebook.com/2008/fbml"><HEAD>
             // do something
         }
 
+
     // Show a custom alertDismissed
     //
     function showAlert() {
         navigator.notification.alert(
-            'You are the winner!',  // message
+            '您確定前往「精選文章」嗎',  // message
             //alertDismissed,         // callback
-            'Game Over',            // title
-            'Done'                  // buttonName
+            'title',            // title
+            '引導頁面'                  // buttonName
+        );
+    }
+
+
+    // process the promptation dialog result
+    function onPrompt(results) {
+        alert("You selected " + results.buttonIndex + " and entered " + results.input1);
+    }
+    // Show a custom prompt dialog
+    //
+    function showPrompt() {
+        navigator.notification.prompt(
+            'Please enter your name',  // message
+            onPrompt,                  // callback to invoke
+            'Registration',            // title
+            ['Submit','Exit'],             // buttonLabels
+            //'Jane Wu'                 // defaultText
         );
     }
 </script>
@@ -205,8 +223,18 @@ google_ad_height = 250;
 </DIV>
 <DIV class="clearboth"></DIV>
 <UL class="nav nav-tabs">
-  <LI class="active"><A 
+  
+
+
+
+  <LI class="active">
+  	<A href="#" onclick="showPrompt(); return false;">輸入暱稱</A></LI>
+  <LI><A 
   href="http://womany.net/events/lianhonghong" onclick="showAlert(); return false;">精選文章</A></LI>
+
+
+
+
   <LI><A href="http://womany.net/events/lianhonghong/rule">活動辦法</A></LI>
   <LI><A href="http://womany.net/events/lianhonghong/posts">快來投票</A></LI></UL>
 <DIV style="margin-top: 30px;" class="tab-content">
