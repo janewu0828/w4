@@ -57,6 +57,7 @@
 
     <!-- Plugins can also be added here. -->
     <plugin name="org.apache.cordova.facebook.Connect" value="org.apache.cordova.facebook.ConnectPlugin" />
+    <plugin name="org.apache.cordova.facebook.Connect" value="FacebookConnectPlugin" />
     <!-- A -->
     <plugin name="Notification" value="org.apache.cordova.Notification"/>
     <!-- i -->
